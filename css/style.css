@@ -60,7 +60,7 @@ body {
 
 /* ---------- */
 [class*="_container"] {
-   max-width: 66.06rem;
+   max-width: 1057px;
    margin: 0px auto;
 }
 
@@ -87,16 +87,60 @@ body {
 .menu {
    display: flex;
    justify-content: flex-end;
+   /* padding: 0px 40px 0px 0px; */
 
 }
 
 .menu__list {
    display: flex;
+   gap: 40px;
 }
 
-.menu__item {}
+.menu__item {
+   margin-right: 0px 40px 0px 0px;
+}
 
-.menu__link {}
+.menu__link {
+   font-family: Raleway;
+   text-transform: uppercase;
+   font-weight: 700;
+   font-size: 10px;
+   line-height: 1.2;
+   color: black;
+   letter-spacing: 1px;
+   /*font-style: normal;
+   line-height: 12px;
+   text-align: left; */
+   position: relative;
+   /* cursor: pointer; */
+   /* line-height: 1;
+   /*задаём высоту строки*/
+   /* text-decoration: none; */
+   /* убираем подчёркивание */
+
+}
+
+.menu__link:after {
+   display: block;
+   position: absolute;
+   left: 0;
+   /*изменить на right:0;, чтобы изменить направление подчёркивания */
+   width: 0;
+   /*задаём длинну линии до наведения курсора*/
+   height: 2px;
+   /*задаём ширину линии*/
+   background-color: #1f62ce;
+   /*задаём цвет линии*/
+   content: "";
+   transition: width 0.3s ease-out;
+   /*задаём время анимации*/
+}
+
+.menu__link:hover:after,
+.menu__link:focus:after {
+   width: 100%;
+   /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}
 
 .button {
    display: inline-block;
@@ -104,7 +148,7 @@ body {
    text-transform: uppercase;
    font-weight: 800;
    font-size: 10px;
-   line-height: 12px;
+   line-height: 1.2;
    letter-spacing: 1px;
    color: #FCFDFE;
    padding: 13px 30px;
@@ -113,7 +157,15 @@ body {
    background-color: #EC5863;
 }
 
+.button:hover {
+   background-color: #e93c48;
+}
+
 .button__blue {
    background: #4285F4;
    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.button__blue:hover {
+   background: #1f62ce;
 }
