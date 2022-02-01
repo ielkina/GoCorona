@@ -1,6 +1,5 @@
 /*Посмотреть урок про минимально обнуление*/
-@import url(https://fonts.googleapis.com/css?family=Rubik:regular);
-
+/*как написать свио снипеты в html*/
 *,
 *::before,
 *::after {
@@ -43,9 +42,7 @@ body {
    color: #616161;
 }
 
-body {
-   /* -------------- */
-}
+/* body {} */
 
 .wrapper {
    overflow: hidden;
@@ -60,11 +57,49 @@ body {
 
 /* ---------- */
 [class*="_container"] {
-   max-width: 1057px;
+   max-width: 1087px;
    margin: 0px auto;
+   padding: 0px 15px;
 }
 
-.header {}
+/*pc*/
+@media (max-width: 1087px) {
+   [class*="_container"] {
+      max-width: 970px;
+   }
+}
+
+/*tablet*/
+@media (max-width: 991.98px) {
+   [class*="_container"] {
+      max-width: 750px;
+   }
+}
+
+/*mobile*/
+@media (max-width: 767.98px) {
+   [class*="_container"] {
+      max-width: none;
+   }
+}
+
+/*mobile small*/
+@media (max-width: 479.98px) {
+   .header__logo {
+      flex: 0 0 40px;
+      overflow: hidden;
+   }
+}
+
+/*HEADER-----------------------------------------------------------------------------*/
+.header {
+   position: absolute;
+   /*фиксируем шапку*/
+   width: 100%;
+   top: 0;
+   left: 0;
+   z-index: 50;
+}
 
 .header__container {
    display: flex;
@@ -72,32 +107,37 @@ body {
    align-items: center;
 }
 
-.header__logo {}
+.header__logo {
+   position: relative;
+   z-index: 5;
+}
 
 .header__menu {
    flex: 1 1 auto;
 }
 
 .header__button {
+   position: relative;
+   z-index: 5;
    flex: 0 0 252px;
    display: flex;
    justify-content: flex-end;
+   align-items: center;
+
 }
 
+/*MENU---------------------------------------------------------------------------------------*/
 .menu {
    display: flex;
    justify-content: flex-end;
-   /* padding: 0px 40px 0px 0px; */
-
 }
 
 .menu__list {
    display: flex;
-   gap: 40px;
 }
 
 .menu__item {
-   margin-right: 0px 40px 0px 0px;
+   margin: 0px 40px 0px 0px;
 }
 
 .menu__link {
@@ -108,10 +148,9 @@ body {
    line-height: 1.2;
    color: black;
    letter-spacing: 1px;
-   /*font-style: normal;
-   line-height: 12px;
-   text-align: left; */
-   position: relative;
+   /* position: relative; */
+   /* line-height: 12px; */
+   /* text-align: left; */
    /* cursor: pointer; */
    /* line-height: 1;
    /*задаём высоту строки*/
@@ -120,27 +159,95 @@ body {
 
 }
 
-.menu__link:after {
+/* .menu__link:after {
    display: block;
-   position: absolute;
-   left: 0;
-   /*изменить на right:0;, чтобы изменить направление подчёркивания */
-   width: 0;
-   /*задаём длинну линии до наведения курсора*/
-   height: 2px;
-   /*задаём ширину линии*/
-   background-color: #1f62ce;
+   /*позиция подчеркивания*/
+/* position: absolute; */
+/* left: 0; */
+/*изменить на right:0;, чтобы изменить направление подчёркивания */
+/* width: 0; */
+/*задаём длину линии до наведения курсора*/
+/* height: 2px; */
+/*задаём ширину линии*/
+/* background-color: #EC5863;
    /*задаём цвет линии*/
-   content: "";
-   transition: width 0.3s ease-out;
-   /*задаём время анимации*/
+/* content: ""; */
+/* transition: width 0.3s ease-out; */
+/*задаём время анимации*/
+/* } */
+
+.menu__link:hover {
+   text-decoration: underline;
 }
 
-.menu__link:hover:after,
+/* .menu__link:hover:after,
 .menu__link:focus:after {
    width: 100%;
-   /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+   /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью
+} */
+
+@media (max-width: 991.98px) {
+   .header__container {
+      min-height: 80px;
+   }
+
+   .header__button {
+      flex: 0 0 150px;
+   }
+
+   .menu__item {
+      margin: 0px 30px 0px 0px;
+   }
 }
+
+@media (max-width: 767.98px) {
+   .menu__body {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+      padding: 90px 15px 30px 15px;
+      transition: left 0.3s ease 15px;
+   }
+
+   .menu__body:target {
+      left: 0;
+   }
+
+   .menu__list {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+
+   .menu__item {
+      margin: 0px 0px 25px 0px;
+   }
+
+   .menu__item:last-child {
+      margin-bottom: 0;
+   }
+
+   .menu__link {
+      font-size: 20px;
+   }
+
+   /* .header__button .button {
+   padding: 14px 20px;
+} */
+}
+
+@media (max-width: 479.98px) {
+   .header__logo {
+      flex: 0 0 40px;
+      overflow: hidden;
+   }
+}
+
+
+/*BUTTON-------------------------------------------------------------------------------------*/
 
 .button {
    display: inline-block;
@@ -168,4 +275,34 @@ body {
 
 .button__blue:hover {
    background: #1f62ce;
+   /* transition: width 0.3s ease-out; */
+}
+
+/*BURGER-----------------------------------------------------------------------------------*/
+.icon-menu {
+   display: none;
+}
+
+@media (max-width: 767.98px) {
+   .icon-menu {
+      display: flex;
+      position: relative;
+      flex: 0 0 30px;
+      height: 18px;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 0px 0px 0px 20px;
+   }
+
+   .icon-menu::before,
+   .icon-menu::after {
+      content: "";
+      background-color: black;
+      height: 2px;
+   }
+
+   .icon-menu span {
+      height: 2px;
+      background-color: black;
+   }
 }
