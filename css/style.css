@@ -1,5 +1,5 @@
 /*Посмотреть урок про минимально обнуление*/
-/*как написать свио снипеты в html*/
+/*как написать свои снипеты в html*/
 *,
 *::before,
 *::after {
@@ -42,7 +42,7 @@ body {
    color: #616161;
 }
 
-/* body {} */
+body {}
 
 .wrapper {
    overflow: hidden;
@@ -94,7 +94,6 @@ body {
 /*HEADER-----------------------------------------------------------------------------*/
 .header {
    position: absolute;
-   /*фиксируем шапку*/
    width: 100%;
    top: 0;
    left: 0;
@@ -148,43 +147,31 @@ body {
    line-height: 1.2;
    color: black;
    letter-spacing: 1px;
-   /* position: relative; */
-   /* line-height: 12px; */
-   /* text-align: left; */
-   /* cursor: pointer; */
-   /* line-height: 1;
-   /*задаём высоту строки*/
-   /* text-decoration: none; */
-   /* убираем подчёркивание */
-
+   position: relative;
+   line-height: 12px;
+   text-align: left;
+   cursor: pointer;
+   line-height: 1;
+   text-decoration: none;
 }
 
-/* .menu__link:after {
+.menu__link:after {
    display: block;
-   /*позиция подчеркивания*/
-/* position: absolute; */
-/* left: 0; */
-/*изменить на right:0;, чтобы изменить направление подчёркивания */
-/* width: 0; */
-/*задаём длину линии до наведения курсора*/
-/* height: 2px; */
-/*задаём ширину линии*/
-/* background-color: #EC5863;
-   /*задаём цвет линии*/
-/* content: ""; */
-/* transition: width 0.3s ease-out; */
-/*задаём время анимации*/
-/* } */
-
-.menu__link:hover {
-   text-decoration: underline;
+   position: absolute;
+   left: 0;
+   right: 0;
+   width: 0;
+   height: 2px;
+   background-color: #EC5863;
+   content: "";
+   transition: width 0.3s ease-out;
 }
 
-/* .menu__link:hover:after,
+.menu__link:hover:after,
 .menu__link:focus:after {
    width: 100%;
-   /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью
-} */
+   /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}
 
 @media (max-width: 991.98px) {
    .header__container {
@@ -207,13 +194,28 @@ body {
       left: -100%;
       width: 100%;
       height: 100%;
+      overflow: auto;
       background-color: #ffffff;
       padding: 90px 15px 30px 15px;
       transition: left 0.3s ease 15px;
+      -webkit-transition: left 0.3s ease 15px;
+      -moz-transition: left 0.3s ease 15px;
+      -ms-transition: left 0.3s ease 15px;
+      -o-transition: left 0.3s ease 15px;
    }
 
-   .menu__body:target {
+   .header:target .menu__body {
       left: 0;
+   }
+
+   .header:target .menu__body:before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 80px;
+      width: 100%;
+      background-color: white;
    }
 
    .menu__list {
@@ -233,10 +235,6 @@ body {
    .menu__link {
       font-size: 20px;
    }
-
-   /* .header__button .button {
-   padding: 14px 20px;
-} */
 }
 
 @media (max-width: 479.98px) {
@@ -279,6 +277,7 @@ body {
 }
 
 /*BURGER-----------------------------------------------------------------------------------*/
+.close-icon-menu,
 .icon-menu {
    display: none;
 }
@@ -304,5 +303,42 @@ body {
    .icon-menu span {
       height: 2px;
       background-color: black;
+   }
+
+   .close-icon-menu {
+      flex: 0 0 30px;
+      height: 18px;
+      position: relative;
+      margin: 0px 0px 0px 20px;
+   }
+
+
+   .close-icon-menu::before,
+   .close-icon-menu::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      background-color: black;
+      height: 2px;
+   }
+
+   .close-icon-menu::before {
+      transform: rotate(37deg);
+
+   }
+
+   .close-icon-menu::after {
+      transform: rotate(-37deg);
+
+   }
+
+   .header:target .icon-menu {
+      display: none;
+   }
+
+   .header:target .close-icon-menu {
+      display: flex;
    }
 }
