@@ -42,8 +42,6 @@ body {
    color: #616161;
 }
 
-body {}
-
 .wrapper {
    overflow: hidden;
    display: flex;
@@ -264,6 +262,7 @@ body {}
 
 .button:hover {
    background-color: #e93c48;
+   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .button__blue {
@@ -340,4 +339,54 @@ body {}
    .header:target .close-icon-menu {
       display: flex;
    }
+}
+
+/*selection-------------------------------------------------------------------------*/
+
+.get-started {
+   background-color: #FAFBFD;
+   padding: 150px 0px 50px 0px;
+}
+
+.get-started__container {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.get-started__content {
+   flex: 0 1 48%;
+   padding: 0px 0px 0px 20px;
+}
+
+.get-started__block-text {}
+
+.block-text {}
+
+.block-text__title {}
+
+.block-text__title-blue {}
+
+.block-text__text {}
+
+.block-text__button {}
+
+.get-started__video {}
+
+.video-get-started {
+   flex: 1 1 100%;
+   padding: 0px 0px 0px 20px;
+}
+
+.video-get-started__icon {}
+
+.video-get-started__body {}
+
+.video-get-started__text {}
+
+.get-started__image {
+   flex: 0 1 52%;
+}
+
+.get-started__image img {
+   max-width: 100%;
 }
