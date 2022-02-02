@@ -312,7 +312,6 @@ body {}
       margin: 0px 0px 0px 20px;
    }
 
-
    .close-icon-menu::before,
    .close-icon-menu::after {
       content: "";
