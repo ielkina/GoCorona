@@ -195,11 +195,7 @@ body {
       overflow: auto;
       background-color: #ffffff;
       padding: 90px 15px 30px 15px;
-      transition: left 0.3s ease 15px;
-      -webkit-transition: left 0.3s ease 15px;
-      -moz-transition: left 0.3s ease 15px;
-      -ms-transition: left 0.3s ease 15px;
-      -o-transition: left 0.3s ease 15px;
+      transition: left 0.3s;
    }
 
    .header:target .menu__body {
@@ -343,12 +339,48 @@ body {
 
 /*selection-------------------------------------------------------------------------*/
 
+
+.block-text {}
+
+.block-text__title {
+   color: #000000;
+   font-weight: 700;
+   font-size: 44px;
+   line-height: 126%;
+}
+
+.block-text__title:not(:last-child) {
+   margin: 0px 0px 12px 0px;
+}
+
+.block-text__title span {
+   color: #EC5863;
+}
+
+.block-text__title-blue span {
+   color: #4285F4;
+}
+
+.block-text__text {
+   line-height: 138.5%;
+   letter-spacing: 0.08em;
+}
+
+.block-text__text:not(:last-child) {
+   margin: 0px 0px 24px 0px;
+}
+
+
+
+/*-------------------------------------------------------------------------------------*/
+
 .get-started {
    background-color: #FAFBFD;
    padding: 150px 0px 50px 0px;
 }
 
 .get-started__container {
+   align-items: center;
    display: flex;
    flex-wrap: wrap;
 }
@@ -358,30 +390,14 @@ body {
    padding: 0px 0px 0px 20px;
 }
 
-.get-started__block-text {}
+.get-started__block-text {
+   max-width: 410px;
+}
 
-.block-text {}
-
-.block-text__title {}
-
-.block-text__title-blue {}
-
-.block-text__text {}
-
-.block-text__button {}
-
-.get-started__video {}
-
-.video-get-started {
+.get-started__video {
    flex: 1 1 100%;
    padding: 0px 0px 0px 20px;
 }
-
-.video-get-started__icon {}
-
-.video-get-started__body {}
-
-.video-get-started__text {}
 
 .get-started__image {
    flex: 0 1 52%;
@@ -389,4 +405,32 @@ body {
 
 .get-started__image img {
    max-width: 100%;
+}
+
+.video-get-started {
+   display: inline-flex;
+}
+
+.video-get-started__icon {
+   flex: 0 0 44px;
+}
+
+.video-get-started__icon:hover {}
+
+.video-get-started__body {
+   padding: 0px 0px 0px 12px;
+}
+
+.video-get-started__title {
+   color: rgba(176, 176, 176, 1);
+   font-size: 13px;
+   line-height: 126%;
+   letter-spacing: 1.5px;
+
+}
+
+.video-get-started__text {
+   color: rgba(0, 0, 0, 1);
+   letter-spacing: 2.65px;
+
 }
