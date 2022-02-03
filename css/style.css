@@ -252,7 +252,7 @@ body {
    color: #FCFDFE;
    padding: 13px 30px;
    border-radius: 5px;
-   border: 1px solid;
+   border: 0px solid;
    background-color: #EC5863;
 }
 
@@ -338,9 +338,6 @@ body {
 }
 
 /*selection-------------------------------------------------------------------------*/
-
-
-.block-text {}
 
 .block-text__title {
    color: #000000;
@@ -439,9 +436,13 @@ body {
 
 .video-get-started__icon {
    flex: 0 0 44px;
+   transition: 1s;
 }
 
-.video-get-started__icon:hover {}
+.video-get-started__icon:hover {
+   /*flex: 0 0 50px;*/
+   transform: scale(1.2);
+}
 
 .video-get-started__body {
    padding: 0px 0px 0px 12px;
@@ -502,3 +503,18 @@ body {
       padding: 0;
    }
 }
+
+/*stay safe ------------------------------------------------------------------------------------*/
+.stay-safe {}
+
+.stay-safe__container {}
+
+.stay-safe__media {}
+
+.media-stay-safe {}
+
+.media-stay-safe__image {}
+
+.stay-safe__content {}
+
+.stay-safe__block-text {}
