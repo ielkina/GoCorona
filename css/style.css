@@ -647,6 +647,8 @@ body {
    border-radius: 16px;
    position: relative;
    z-index: 2;
+   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
 
 }
 
@@ -668,7 +670,17 @@ body {
 
 }
 
-.statistics-experts__decor-2 {}
+.statistics-experts__decor-2 {
+   width: 97px;
+   height: 97px;
+   right: 50%;
+   top: -40px;
+   transform: rotate(+30deg);
+   -webkit-transform: rotate(+30deg);
+   -moz-transform: rotate(+30deg);
+   -ms-transform: rotate(+30deg);
+   -o-transform: rotate(+30deg);
+}
 
 .statistics-experts__decor-3 {}
 
@@ -679,17 +691,20 @@ body {
 }
 
 .body-statistics-experts__item {
-   flex: 1 1 auto;
+   flex: 1 1 25%;
+   text-align: center;
 
+}
+
+.body-statistics-experts__item:last-child {
+   flex: 0 1 50%;
+   letter-spacing: 2px;
 }
 
 .body-statistics-experts__value {
    font-weight: 700;
    font-size: 36px;
    line-height: 1.2;
-   text-align: center;
-   align-items: center;
-   display: flex;
    letter-spacing: 1px;
    color: #EC5863;
 
@@ -699,12 +714,11 @@ body {
    font-style: normal;
    font-weight: bold;
    font-size: 11px;
-   line-height: 13px;
+   line-height: 2.8;
+   letter-spacing: 3px;
    color: #000000;
    text-transform: uppercase;
-   display: flex;
    align-items: center;
    text-align: center;
-   letter-spacing: 1px;
 
 }
