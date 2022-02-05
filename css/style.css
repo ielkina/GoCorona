@@ -641,10 +641,10 @@ body {
 
 .experts__statistics {}
 
-/* .experts__content {
-   flex: 0 1 48%;
-   padding: 0px 20px;
-} */
+.experts__content {
+   flex: 0 1 50%;
+   padding: 0px 20px 0px 0px;
+}
 
 
 .experts__block-tex {
